@@ -20,7 +20,7 @@ public class AKEOME : MonoBehaviour
     void Start()
     {
         //A();
-        Ke();
+        //Ke();
         O();
         Me();
     }
@@ -39,12 +39,24 @@ public class AKEOME : MonoBehaviour
 
     private void Ke()
     {
+        var sequence = DOTween.Sequence();
 
+        sequence.Append(ke[0].transform.DOMoveZ(-4.5f, 2));
+        sequence.Append(ke[1].transform.DOMoveX(4.5f, 2));
+        sequence.Append(ke[2].transform.DOMoveZ(-5.5f, 2));
     }
 
     private void O()
     {
+        var sequence = DOTween.Sequence();
 
+        sequence.Append(o[0].transform.DOMoveX(-2f, 1));
+        sequence.Append(o[1].transform.DOMoveZ(-2, 1));
+        sequence.Append(o[1].transform.DOMoveX(-6, 1));
+        sequence.Append(o[1].transform.DOMoveZ(0, 1));
+        sequence.Append(o[1].transform.DOMoveX(-1.5f, 1));
+        sequence.Append(o[1].transform.DOMoveZ(-2, 1));
+        sequence.Append(o[2].transform.DOMoveZ(-1.5f, 2));
     }
 
     private void Me()
