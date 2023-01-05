@@ -19,8 +19,8 @@ public class AKEOME : MonoBehaviour
 
     void Start()
     {
-        //A();
-        //Ke();
+        A();
+        Ke();
         O();
         Me();
     }
@@ -30,11 +30,11 @@ public class AKEOME : MonoBehaviour
         var sequence = DOTween.Sequence();
 
         sequence.Append(a[0].transform.DOMoveX(3.5f, 1));
-        sequence.Append(a[1].transform.DOMoveZ(0, 2));
+        sequence.Append(a[1].transform.DOMoveZ(0, 1));
         sequence.Append(a[2].transform.DOMove(new Vector3(0, 0, 0), 1));
         sequence.Append(a[2].transform.DOMove(new Vector3(0, 0, 2.5f), 1));
         sequence.Append(a[2].transform.DOMove(new Vector3(4, 0, 2.5f), 1));
-        sequence.Append(a[2].transform.DOMove(new Vector3(4, 0, 0), 1));
+        sequence.Append(a[2].transform.DOMove(new Vector3(4, 0, 0), 2));
     }
 
     private void Ke()
@@ -43,7 +43,7 @@ public class AKEOME : MonoBehaviour
 
         sequence.Append(ke[0].transform.DOMoveZ(-4.5f, 2));
         sequence.Append(ke[1].transform.DOMoveX(4.5f, 2));
-        sequence.Append(ke[2].transform.DOMoveZ(-5.5f, 2));
+        sequence.Append(ke[2].transform.DOMoveZ(-5.5f, 3));
     }
 
     private void O()
@@ -56,11 +56,18 @@ public class AKEOME : MonoBehaviour
         sequence.Append(o[1].transform.DOMoveZ(0, 1));
         sequence.Append(o[1].transform.DOMoveX(-1.5f, 1));
         sequence.Append(o[1].transform.DOMoveZ(-2, 1));
-        sequence.Append(o[2].transform.DOMoveZ(-1.5f, 2));
+        sequence.Append(o[2].transform.DOMoveZ(0.5f, 1));
     }
 
     private void Me()
     {
+        var sequence = DOTween.Sequence();
 
+        sequence.Append(me[0].transform.DOMoveZ(-4, 1));
+        sequence.Append(me[0].transform.DOMove(new Vector3(-4.5f, 0, -6), 1));
+        sequence.Append(me[1].transform.DOMove(new Vector3(-7.5f, 0, -6f), 1));
+        sequence.Append(me[1].transform.DOMoveZ(-3.5f, 1));
+        sequence.Append(me[1].transform.DOMoveX(-3, 1));
+        sequence.Append(me[1].transform.DOMoveZ(-6, 2));
     }
 }
